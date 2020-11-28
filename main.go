@@ -105,7 +105,7 @@ func readRecords() (recordsJSON, error) {
 }
 
 func getExternalIP(useIPv6 bool) (string, error) {
-	service := "https://ident.me"
+	service := "https://v4.ident.me"
 	if useIPv6 {
 		service = "https://v6.ident.me"
 	}
