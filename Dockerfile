@@ -4,7 +4,7 @@ MAINTAINER Emily Maré (emileet) <emileet@plsnobully.me>
 WORKDIR /app
 
 COPY data/records.json /app/data/
-COPY go.mod main.go /app
+COPY go.mod main.go /app/
 
 RUN go mod download && \
     go build -o run .
