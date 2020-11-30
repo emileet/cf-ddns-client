@@ -1,4 +1,5 @@
 # cf-ddns-client
+[![pipeline status](https://git.plsnobully.me/emileet/cf-ddns-client/badges/master/pipeline.svg)](https://git.plsnobully.me/emileet/cf-ddns-client/-/commits/master)
 
 a go based cloudflare dynamic dns client for managing domains with dynamic ip addresses
 
