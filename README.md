@@ -42,6 +42,12 @@ clone this repo and then build an image (ensure `data/records.json` exists)
 docker build -t emileet/cf-ddns-client .
 ```
 
+alternatively, pull the image from the pod.plsnobully.me container registry
+
+```shell
+docker pull pod.plsnobully.me/emileet/cf-ddns-client:latest
+```
+
 now spin up a container
 ```shell
 docker run --detach \
