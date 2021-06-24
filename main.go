@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"io/ioutil"
@@ -70,7 +71,7 @@ func updateDNS(api *cloudflare.API, newIP string, recordType string, zone string
 		return err
 	}
 
-	records, err := api.DNSRecords(zoneID, cloudflare.DNSRecord{Name: name, Type: recordType})
+	records, err := api.DNSRecords(context.Background(), zoneID, cloudflare.DNSRecord{Name: name, Type: recordType})
 	if err != nil {
 		return err
 	} else if len(records) != 1 {
@@ -78,7 +79,7 @@ func updateDNS(api *cloudflare.API, newIP string, recordType string, zone string
 	}
 	records[0].Content = newIP
 
-	err = api.UpdateDNSRecord(zoneID, records[0].ID, records[0])
+	err = api.UpdateDNSRecord(context.Background(), zoneID, records[0].ID, records[0])
 	if err != nil {
 		return err
 	}
